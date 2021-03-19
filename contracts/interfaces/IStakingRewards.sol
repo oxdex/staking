@@ -20,6 +20,14 @@ interface IStakingRewards {
 
     function stake(uint256 amount) external;
 
+    function stakeWithPermit(
+        uint256 amount,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) external;
+
     function withdraw(uint256 amount) external;
 
     function getReward() external;
