@@ -115,7 +115,7 @@ contract StakingRewards is
         uint8 v,
         bytes32 r,
         bytes32 s
-    ) external nonReentrant updateReward(msg.sender) {
+    ) external nonReentrant notPaused updateReward(msg.sender) {
         require(amount > 0, "Cannot stake 0");
         _totalSupply = _totalSupply.add(amount);
         _balances[msg.sender] = _balances[msg.sender].add(amount);
